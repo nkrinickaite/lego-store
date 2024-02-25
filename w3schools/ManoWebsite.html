@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <title>Lego Parduotuvė</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="StyleSheet.css">
+</head>
+<body class="content" style="max-width:1200px">
+
+    <!-- Soninis meniu -->
+    <nav class="sidebar bar-block white collapse top" style="z-index:3;width:250px" id="mySidebar">
+        <div class="container display-container padding-16">
+            <i onclick="close()" class="fa fa-remove hide-large button display-topright"></i>
+            <img src="Logo.jpg" alt="Logo" style="width:45%">
+        </div>
+        <div class="padding-64 large text-grey" style="font-weight:bold">
+            <a href="#" class="bar-item button">Lego Star Wars</a>
+            <a href="#" class="bar-item button">Lego City</a>
+            <a onclick="myAccFunc()" href="javascript:void(0)" class="button block white left-align" id="myBtn">
+                Lego Technic <i class="fa fa-caret-down"></i>
+            </a>
+            <div id="demoAcc" class="bar-block hide padding-large medium">
+                <a href="#jeans" class="button light-grey"><i class="fa fa-caret-right margin-right"></i>Lego Suaugusiems</a>
+                <a href="#" class="bar-item button">Lego 16+</a>
+                <a href="#" class="bar-item button">Lego 8+</a>
+                <a href="#" class="bar-item button">Lego 4+</a>
+            </div>
+            <a href="#" class="bar-item button">Lego Harry Potter</a>
+            <a href="#" class="bar-item button">Lego Friends</a>
+            <a href="#" class="bar-item button">Lego Marvel</a>
+            <a href="#" class="bar-item button">Lego Ninjago</a>
+        </div>
+        <a href="#kontaktai" class="bar-item button padding">Kontaktai</a>
+        <a href="javascript:void(0)" class="bar-item button padding" onclick="document.getElementById('newsletter').style.display='block'">Naujienlaiškiai</a>
+        <a href="#klausimai" class="bar-item button padding">Klausimai</a>
+    </nav>
+
+    <!-- Virsus maziems ekranams -->
+    <header class="bar top hide-large white xlarge">
+        <img src="Logo.jpg" alt="Logo" style="width:15%">
+        <img src="Meniu.jpg" alt="Meniu" style="width:18%" class="bar-item button padding-24 right" onclick="w3_open()"><i class="fa fa-bars"></i>
+
+    </header>
+
+    <!-- Soninis meniu maziems ekranams -->
+    <div class="overlay hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- Turinys -->
+    <div class="main" style="margin-left:250px">
+
+        <div class="hide-large" style="margin-top:83px"></div>
+
+        <!-- Antraste -->
+        <header class="container xlarge">
+            <p class="right">
+                <i class="fa fa-shopping-cart margin-right"></i>
+                <i class="fa fa-search"></i>
+            </p>
+        </header>
+
+        <!-- Pagrinidinis -->
+        <div class="display-container container">
+            <img src="Pagrindinis.jpg" alt="Porsche 911" style="width:100%">
+            <div class="display-topleft text-white" style="padding:24px 48px">
+                <h1 class="jumbo hide-small">Nauji atvykėliai</h1>
+                <h1 class="hide-large hide-medium">Nauji atvykėliai</h1>
+                <h1 class="hide-small">KOLEKCIJA 2023</h1>
+                <p><a href="AntrasPuslapis.html" class="button white padding-large large">PIRKTI</a></p>
+            </div>
+        </div>
+
+        <div class="container text-grey" id="jeans">
+            <p>8 items</p>
+        </div>
+
+        <!-- Prekes -->
+        <div class="row">
+            <div class="col l3 s6">
+                <div class="container">
+                    <img src="Vespa.jpg" alt="Vespa" style="width:100%">
+                    <p>Vespa 125<br><b>114,99 €</b></p>
+                </div>
+                <div class="container ">
+                    <img src="Porsche.jpg" alt="Por" style="width:100%">
+                    <p>Porsche 911<br><b>169,99 €</b></p>
+                </div>
+            </div>
+
+            <div class="col l3 s6 ">
+                <div class="container">
+                    <div class="display-container">
+                        <img src="Dodge.jpg" alt="Dodge" style="width:100%">
+                        <span class="tag display-topleft red">Nauja!</span>
+                        <div class="display-middle display-hover">
+                            <a href="TreciasPuslapis.html" class="button white">Pirkti<i class="fa fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <p>Dom's Dodge Charger<br><b>139,99 €</b></p>
+                </div>
+                <div class="container ">
+                    <img src="Vaiduokliai.jpg" alt="Vaiduokliai" style="width:100%">
+                    <p>Icons Vaiduoklių Ghostbusters<br><b>186,99 €</b></p>
+                </div>
+            </div>
+
+            <div class="col l3 s6">
+                <div class="container">
+                    <img src="Icons.jpg" alt="Icons" style="width:100%">
+                    <p>Icons Pikapas<br><b>155,99 €</b></p>
+                </div>
+                <div class="container">
+                    <div class="display-container">
+                        <img src="Lambo.jpg" alt="Lambo" style="width:100%">
+                        <span class="
+                              display-topleft red">Nuolaida!</span>
+                        <div class="display-middle display-hover">
+                            <button class="button white">Pirkti <i class="fa fa-shopping-cart"></i></button>
+                        </div>
+                    </div>
+                    <p>Technic Lamborghini Huracán <br><b class="text-red">43,99 €</b></p>
+                </div>
+            </div>
+
+            <div class="col l3 s6">
+                <div class="container">
+                    <img src="Buggati.jpg" alt="Buggati" style="width:100%">
+                    <p>Technic Bugatti Bolide<br><b>51,99 €</b></p>
+                </div>
+                <div class="container">
+                    <img src="Ducati.jpg" alt="Ducati" style="width:100%">
+                    <p>Technic Ducati Panigale V4 R<br><b>56,99 €</b></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="padding-64"></div>
+        <!-- Prenumeravimo juoda skiltis -->
+        <div class="container black padding-32">
+            <h1>Prenumeruoti</h1>
+            <p>Gauti naujienlaiškius:</p>
+            <p>
+                <input class="border" type="text" placeholder="Įvesti e-mail" style="width:100%">
+            </p>
+            <button type="button" class="button red margin-bottom">Prenumeruoti</button>
+        </div>
+
+        <!-- Reklama -->
+        <div class="ad-banner padding">
+            <img src="download.jpg" alt="Advertisement">
+        </div>
+    </div>
+    <!-- Poraste -->
+    <footer class="padding-64 light-grey small center" id="kontaktai">
+        <div class="row-padding">
+            <h4>Kontaktai</h4>
+            <p>Adresas: Laisvės pr. 75, Vilnius, LT-06144, Lietuva</p>
+            <p>Telefonas: +370 661 05555</p>
+            <p>Faksas: +370 661 05555</p>
+            <p>Rinkodarai: rinkodara@lego.lt</p>
+            <p>Atrankoms: atranka@lego.lt</p>
+            <div class="padding-32" id="klausimai"></div>
+            <h4>Klausimai mums:</h4>
+            <form target="_blank">
+                <p><input class="input border questions" type="text" placeholder="Vardas" name="Name" required></p>
+                <p><input class="input border questions" type="text" placeholder="E-mail" name="Email" required></p>
+                <p><input class="input border questions" type="text" placeholder="Tema" name="Subject" required></p>
+                <p><input class="input border questions" type="text" placeholder="Žinutė" name="Message" required></p>
+                <button type="submit" class="button black ">Pateikti</button>
+            </form>
+        </div>
+
+    </footer>
+    <!-- Issokantis langas prenumeruoti -->
+    <div id="newsletter" class="modal">
+        <div class="modal-content animate-zoom" style="padding:32px">
+            <div class="container white center">
+                <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove right button transparent xxlarge"></i>
+                <h2 class="wide">NAUJIENLAIŠKIAI</h2>
+                <p>Prisijunk prie naujienlaiškių gavimo ir gauk specialius pasiūlymus.</p>
+                <p><input class="input border" type="text" placeholder="Įvesk e-mail"></p>
+                <button type="button" class="button padding-large red margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Prenumeruoti</button>
+                <button type="button" class="button padding-large display-topright" onclick="document.getElementById('newsletter').style.display='none'">x</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function myAccFunc() {
+            var x = document.getElementById("demoAcc");
+            if (x.className.indexOf("show") == -1) {
+                x.className += " show";
+            } else {
+                x.className = x.className.replace("show", "");
+            }
+        }
+
+        document.getElementById("myBtn").click();
+
+
+        // Soninio meniu
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

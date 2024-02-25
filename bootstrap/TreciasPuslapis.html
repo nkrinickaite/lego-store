@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <title>Lego Parduotuvė</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0 auto;
+            font-family: 'Arial', sans-serif;
+        }
+
+        footer {
+            padding: 64px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .questions {
+            margin-bottom: 15px;
+        }
+
+        #cart {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        blokas {
+
+        }
+
+    </style>
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            var subject = document.getElementById("subject").value;
+
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                alert("Prašome įrašyti teisingą elektroninį paštą!");
+                return false;
+            }
+            if (subject.length <= 10) {
+                alert("Tema turi būti daugiau nei 10 simbolių!");
+                return false;
+            }
+
+            window.location.href = "AntrasPuslapis.html";
+
+            return false;
+        }
+    </script>
+</head>
+
+<body class="content">
+    <!-- Turinys -->
+    <div class="container main">
+
+
+        <div class="container mt-5">
+
+            <select id="category" onchange="filterToysByCategory()">
+                <option value="all">Visi žaislai</option>
+                <option value="dodge">Dodge</option>
+                <option value="vespa">Vespa</option>
+            </select>
+
+            <!-- Product Cards -->
+            <div class="row">
+                <div class="col-md-4">
+                    <blokas>
+                        <div class="card">
+                            <img src="Dodge.jpg" class="card-img-top" alt="Dom's Dodge Charger">
+                            <div class="card-body">
+                                <h5 class="card-title">Dom's Dodge Charger</h5>
+                                <p class="card-text">139.99 €</p>
+                                <button onclick="addToCart('Dodge')">Pridėti Dodge į krepšelį</button>
+                            </div>
+                        </div>
+                    </blokas>
+                </div>
+                <div class="col-md-4">
+                    <blokas>
+                        <div class="card">
+                            <img src="Vespa.jpg" class="card-img-top" alt="Vespa">
+                            <div class="card-body">
+                                <h5 class="card-title">Vespa</h5>
+                                <p class="card-text">120.99 €</p>
+                                <button onclick="addToCart('Vespa')">Pridėti Vespa į krepšelį</button>
+                            </div>
+                        </div>
+                    </blokas>
+                </div>
+            </div>
+
+            <div id="cart">
+                <h2 class="mb-4">Pirkinių krepšelis</h2>
+                <ul id="cart-items"></ul>
+            </div>
+
+            <script>
+                function addToCart(toy) {
+                    var cartItems = document.getElementById('cart-items');
+                    var listItem = document.createElement('li');
+                    listItem.textContent = toy;
+                    cartItems.appendChild(listItem);
+                }
+
+                function filterToysByCategory() {
+                    var category = document.getElementById('category').value;
+                    var toys = document.querySelectorAll('blokas');
+
+                    toys.forEach(function (toy) {
+                        if (category === 'all' || toy.textContent.toLowerCase().includes(category)) {
+                            toy.style.display = 'inline-block';
+                        } else {
+                            toy.style.display = 'none';
+                        }
+                    });
+                }
+            </script>
+
+            <!-- Poraste -->
+            <footer class="padding-64 light-grey small center" id="kontaktai">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4>Kontaktai</h4>
+                        <p>Adresas: Laisvės pr. 75, Vilnius, LT-06144, Lietuva</p>
+                        <p>Telefonas: +370 661 05555</p>
+                        <p>Faksas: +370 661 05555</p>
+                        <p>Rinkodarai: rinkodara@lego.lt</p>
+                        <p>Atrankoms: atranka@lego.lt</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>Klausimai mums:</h4>
+                        <form onsubmit="return validateForm()">
+                            <p><input class="input border questions" type="text" placeholder="Vardas" name="Name" required></p>
+                            <p><input class="input border questions" type="text" id="email" placeholder="E-mail" name="Email" required></p>
+                            <p><input class="input border questions" type="text" id="subject" placeholder="Tema" name="Subject" required></p>
+                            <p><input class="input border questions" type="text" placeholder="Žinutė" name="Message" required></p>
+                            <button type="submit" class="button black ">Pateikti</button>
+                        </form>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+</body>
+</html>
